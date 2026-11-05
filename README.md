@@ -107,14 +107,11 @@ near-duplicates still depend on careful grouping and visual checks.
 Record where photos came from and any permissions in `data/source_log.csv`.
 Fill in `DATASET_CARD.md`. Do not use the three brief scans as training images.
 
-## 3 Run in order
+## 3 Run
 
 ```bash
-python prepare_data.py
-python train_model.py
-python test_model.py
-python predict_image.py "path/to/one_item.jpg"
-python live_camera.py
+python ui.py
+
 ```
 
 Training runs for 10 epochs by default. One epoch is one pass through the training
@@ -127,14 +124,6 @@ You can change the number of epochs without editing the file:
 ```bash
 python train_model.py --epochs 15
 ```
-
-Use validation results to choose settings. Keep test images out of training and
-model selection. Once you have selected the model, run the test script for the
-reported results. If you make later improvements, use validation for decisions
-and document any repeated test use honestly.
-
-For a second camera, use `python live_camera.py --camera 1`.
-Press Q while the camera window is selected to close it.
 
 ## 4 Read the outputs
 
@@ -183,24 +172,3 @@ a short paragraph explaining the relationship in your report.
 - **Training is slow:** try `--epochs 2` to check the workflow first. Final training and
   performance assessment still require the real dataset.
 
-## Submission and Git
-
-Before submitting, include your actual train/val/test images or an accessible download
-link, the completed dataset card, measured results, your own error analysis and the
-two-minute recorded code walkthrough requested in the brief. The included Word guide
-provides a short walkthrough outline; you must record and explain the running code.
-
-Start tracking your own work, then make meaningful commits as you collect data and
-improve the project:
-
-```bash
-git init
-git add .
-git commit -m "Add simple six class classification project"
-```
-
-Connect your own GitHub or GitLab repository. After the final checks and final
-commit, tag the version you actually submit with `git tag -a v1.0 -m "Part B submission"`
-and push the commits and tag. No remote repository or historical commits are fabricated here.
-
-See `VERIFICATION.md` for the checks performed on this package and their limits.
