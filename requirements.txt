@@ -1,0 +1,7 @@
+# Use Python 3.12. Versions used for the software checks are recorded in VERIFICATION.md.
+torch==2.14.1
+torchvision==0.29.1
+opencv-python==5.0.0.93
+scikit-learn>=1.5,<2
+matplotlib>=3.9,<4
+Pillow>=10,<13
